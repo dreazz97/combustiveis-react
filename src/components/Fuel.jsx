@@ -7,7 +7,6 @@ const Fuel = () => {
   const munOptionsRef = useRef();
   const [fuelData, setFuelData] = useState([]);
   const [TipoCombustivel, setTipoCombustivel] = useState('2105')
-  const [TipoCombustivelNome, setTipoCombustivelNome] = useState('2105')
   const [Municipios, setMunicipios] = useState('229')
   const [MunicipioNome, setMunicipioNome] = useState('Seixal')
 
