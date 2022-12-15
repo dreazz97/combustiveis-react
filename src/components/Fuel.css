@@ -27,3 +27,7 @@ a {
 a:hover {
     color: rgb(38, 224, 38);
 }
+
+.r_select {
+    margin-bottom: 70px;
+}

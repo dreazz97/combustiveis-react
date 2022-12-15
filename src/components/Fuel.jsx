@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../components/Fuel.css'
 import ButtonFuel from './ButtonFuel'
 
 const Fuel = () => {
   // Define a state variable for the fuel prices data
+  const munOptionsRef = useRef();
   const [fuelData, setFuelData] = useState([]);
   const [TipoCombustivel, setTipoCombustivel] = useState('2105')
+  const [TipoCombustivelNome, setTipoCombustivelNome] = useState('2105')
+  const [Municipios, setMunicipios] = useState('229')
+  const [MunicipioNome, setMunicipioNome] = useState('Seixal')
 
   // Use the useEffect hook to make the HTTP request when the component is rendered
   useEffect(() => {
     const getFuelPrices = async () => {
       try {
         // Make the HTTP request
-        const response = await fetch(`https://precoscombustiveis.dgeg.gov.pt/api/PrecoComb/PesquisarPostos?idsTiposComb=${TipoCombustivel}&idMarca=&idTipoPosto=&idDistrito=&idsMunicipios=229&qtdPorPagina=50&pagina=1`);
+        const response = await fetch(`https://precoscombustiveis.dgeg.gov.pt/api/PrecoComb/PesquisarPostos?idsTiposComb=${TipoCombustivel}&idMarca=&idTipoPosto=&idDistrito=&idsMunicipios=${Municipios}&qtdPorPagina=50&pagina=1`);
         const data = await response.json();
 
         // Update the state variable with the retrieved data
@@ -24,15 +28,38 @@ const Fuel = () => {
     }
 
     getFuelPrices();
-  }, [TipoCombustivel]); // The empty array as the second argument tells the hook to only run the effect when the component is first rendered
+  }, [TipoCombustivel, Municipios]); // The empty array as the second argument tells the hook to only run the effect when the component is first rendered
 
   const limitedData = fuelData.slice(0, 5);
 
+  const MunicipiosFunc = () => {
+    if (munOptionsRef.current.value === 'Almada') {
+      setMunicipios('222')
+      setMunicipioNome('Almada')
+    } else if (munOptionsRef.current.value === 'Sesimbra') {
+      setMunicipios('230')
+      setMunicipioNome('Sesimbra')
+    } else if (munOptionsRef.current.value === 'Seixal') {
+      setMunicipios('229')
+      setMunicipioNome('Seixal')
+    }
+  }
+  
+
   return (
     <div className="container-lg ct">
+      <div className="row text-start r_select">
+        <div className="col-lg-2">
+          <select ref={munOptionsRef} className='form-select' onChange={MunicipiosFunc}>
+            <option>Seixal</option>
+            <option>Almada</option>
+            <option>Sesimbra</option>
+          </select>
+          </div>
+        </div>
         <div className="row text-center">
             <div className="col-lg-12">
-                <h1>Preço Gasolina Simples Mais Barata do Seixal</h1>
+                <h1>Preço do Combustível Mais Barato de {MunicipioNome}</h1>
             </div>
         </div>
         <div className="row text-center rl">
