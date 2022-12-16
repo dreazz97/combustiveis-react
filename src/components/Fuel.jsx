@@ -76,7 +76,7 @@ const Fuel = () => {
             </div>
         </div>
         <div className="row text-center rl">
-            <div className="col-lg-3 col-12">
+            <div className="col-lg-3 col-12 cols-ul">
                 <ul className='my-ul'>
                     <li className="tit">Nome</li>
                   {limitedData.map(name => (
@@ -86,7 +86,7 @@ const Fuel = () => {
                   ))}
                 </ul>
             </div>
-            <div className="col-lg-3 col-12">
+            <div className="col-lg-3 col-12 cols-ul">
                 <ul>
                     <li className='tit'>Preço</li>
                     {limitedData.map(price => (
@@ -96,7 +96,7 @@ const Fuel = () => {
                   ))}
                 </ul>
             </div>
-            <div className="col-lg-3 col-12">
+            <div className="col-lg-3 col-12 cols-ul">
                 <ul>
                     <li className='tit'>Tipo</li>
                     {limitedData.map(tipo => (
@@ -106,7 +106,7 @@ const Fuel = () => {
                   ))}
                 </ul>
             </div>
-            <div className="col-lg-3 col-12">
+            <div className="col-lg-3 col-12 cols-ul">
                 <ul>
                     <li className='tit'>Google Maps</li>
                     {limitedData.map(local => (
@@ -118,13 +118,13 @@ const Fuel = () => {
             </div>
         </div>
         <div className="row text-center justify-content-center rbtn">
-            <div className="col-lg-2 col-12">
+            <div className="col-lg-2 col-12 cols-ul">
                 <ButtonFuel text="Gasolina Simples" className={'btn-margin btn-size'} onClick={() => setTipoCombustivel('3201')}/>
             </div>
-            <div className="col-lg-2 col-12">
+            <div className="col-lg-2 col-12 cols-ul">
                 <ButtonFuel text="Gasoleo Simples" className={'btn-margin btn-size'} onClick={() => setTipoCombustivel('2101')}/>
             </div>
-            <div className="col-lg-2 col-12">
+            <div className="col-lg-2 col-12 cols-ul">
                 <ButtonFuel text="Gasoleo Aditivado" className={'btn-margin btn-size btn-last'} onClick={() => setTipoCombustivel('2105')}/>
             </div>
         </div>
