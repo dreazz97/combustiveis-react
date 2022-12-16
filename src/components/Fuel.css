@@ -31,3 +31,45 @@ a:hover {
 .r_select {
     margin-bottom: 70px;
 }
+
+.images-social {
+    width: 40px;
+}
+
+.images-social:hover {
+    cursor: pointer;
+}
+
+.linkedin {
+    margin-right: 25px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .btn-size {
+        width: 150px;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .rbtn {
+        margin-top: 0px;
+    }
+
+    .rl {
+        margin-top: 25px;
+    }
+
+    .btn-margin {
+        margin-top: 20px;
+        margin-left: 25px;
+    }
+
+    .ct {
+        margin-top: 30px;
+    }
+
+    .btn-last {
+        margin-bottom: 30px;
+    }
+}

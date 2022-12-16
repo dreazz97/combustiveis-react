@@ -3,7 +3,6 @@ import '../components/Fuel.css'
 import ButtonFuel from './ButtonFuel'
 
 const Fuel = () => {
-  // Define a state variable for the fuel prices data
   const munOptionsRef = useRef();
   const [fuelData, setFuelData] = useState([]);
   const [TipoCombustivel, setTipoCombustivel] = useState('2105')
@@ -31,6 +30,7 @@ const Fuel = () => {
 
   const limitedData = fuelData.slice(0, 5);
 
+  //Lógic of Municipios
   const MunicipiosFunc = () => {
     if (munOptionsRef.current.value === 'Almada') {
       setMunicipios('222')
@@ -43,18 +43,32 @@ const Fuel = () => {
       setMunicipioNome('Seixal')
     }
   }
+
+  //Linkedin and Github Buttons
+
+  const linkedinFunc = () => {
+     window.open('https://pt.linkedin.com/in/iuri-peniche-29337a183', '_blank');
+  }
+
+  const githubFunc = () => {
+     window.open('https://github.com/dreazz97', '_blank');
+  }
   
 
   return (
     <div className="container-lg ct">
-      <div className="row text-start r_select">
-        <div className="col-lg-2">
+      <div className="row r_select">
+        <div className="col-lg-2 col-4 text-start">
           <select ref={munOptionsRef} className='form-select' onChange={MunicipiosFunc}>
             <option>Seixal</option>
             <option>Almada</option>
             <option>Sesimbra</option>
           </select>
           </div>
+        <div className="col-lg-10 col-8 d-flex justify-content-end">
+          <img className='images-social linkedin' src="/images/linkedin.png" alt='linkedin' onClick={linkedinFunc} />
+          <img className='images-social' src="/images/github.png" alt='github' onClick={githubFunc} />
+        </div>
         </div>
         <div className="row text-center">
             <div className="col-lg-12">
@@ -62,7 +76,7 @@ const Fuel = () => {
             </div>
         </div>
         <div className="row text-center rl">
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-12">
                 <ul className='my-ul'>
                     <li className="tit">Nome</li>
                   {limitedData.map(name => (
@@ -72,7 +86,7 @@ const Fuel = () => {
                   ))}
                 </ul>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-12">
                 <ul>
                     <li className='tit'>Preço</li>
                     {limitedData.map(price => (
@@ -82,7 +96,7 @@ const Fuel = () => {
                   ))}
                 </ul>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-12">
                 <ul>
                     <li className='tit'>Tipo</li>
                     {limitedData.map(tipo => (
@@ -92,7 +106,7 @@ const Fuel = () => {
                   ))}
                 </ul>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-12">
                 <ul>
                     <li className='tit'>Google Maps</li>
                     {limitedData.map(local => (
@@ -104,14 +118,14 @@ const Fuel = () => {
             </div>
         </div>
         <div className="row text-center justify-content-center rbtn">
-            <div className="col-lg-2">
-                <ButtonFuel text="Gasolina Simples" onClick={() => setTipoCombustivel('3201')}/>
+            <div className="col-lg-2 col-12">
+                <ButtonFuel text="Gasolina Simples" className={'btn-margin btn-size'} onClick={() => setTipoCombustivel('3201')}/>
             </div>
-            <div className="col-lg-2">
-                <ButtonFuel  text="Gasoleo Simples" onClick={() => setTipoCombustivel('2101')}/>
+            <div className="col-lg-2 col-12">
+                <ButtonFuel text="Gasoleo Simples" className={'btn-margin btn-size'} onClick={() => setTipoCombustivel('2101')}/>
             </div>
-            <div className="col-lg-2">
-                <ButtonFuel  text="Gasoleo Aditivado" onClick={() => setTipoCombustivel('2105')}/>
+            <div className="col-lg-2 col-12">
+                <ButtonFuel text="Gasoleo Aditivado" className={'btn-margin btn-size btn-last'} onClick={() => setTipoCombustivel('2105')}/>
             </div>
         </div>
     </div>
