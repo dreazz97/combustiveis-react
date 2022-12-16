@@ -66,8 +66,8 @@ const Fuel = () => {
           </select>
           </div>
         <div className="col-lg-10 col-8 d-flex justify-content-end">
-          <img className='images-social linkedin' src="/images/linkedin.png" alt='linkedin' onClick={linkedinFunc} />
-          <img className='images-social' src="/images/github.png" alt='github' onClick={githubFunc} />
+          <img className='images-social linkedin' src="/combustiveis-react/images/linkedin.png" alt='linkedin' onClick={linkedinFunc} />
+          <img className='images-social' src="/combustiveis-react/images/github.png" alt='github' onClick={githubFunc} />
         </div>
         </div>
         <div className="row text-center">
