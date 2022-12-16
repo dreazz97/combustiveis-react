@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/combustiveis-react/static/css/main.2b7ff000.css",
+    "main.css": "/combustiveis-react/static/css/main.bb849d24.css",
     "main.js": "/combustiveis-react/static/js/main.cae30e64.js",
     "static/js/787.7904c6af.chunk.js": "/combustiveis-react/static/js/787.7904c6af.chunk.js",
     "index.html": "/combustiveis-react/index.html",
-    "main.2b7ff000.css.map": "/combustiveis-react/static/css/main.2b7ff000.css.map",
+    "main.bb849d24.css.map": "/combustiveis-react/static/css/main.bb849d24.css.map",
     "main.cae30e64.js.map": "/combustiveis-react/static/js/main.cae30e64.js.map",
     "787.7904c6af.chunk.js.map": "/combustiveis-react/static/js/787.7904c6af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b7ff000.css",
+    "static/css/main.bb849d24.css",
     "static/js/main.cae30e64.js"
   ]
 }
