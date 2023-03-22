@@ -41,7 +41,10 @@ const Fuel = () => {
     } else if (munOptionsRef.current.value === 'Seixal') {
       setMunicipios('229')
       setMunicipioNome('Seixal')
-    }
+    } else if (munOptionsRef.current.value === 'Grândola') {
+      setMunicipios('224')
+      setMunicipioNome('Seixal')
+    } 
   }
 
   //Linkedin and Github Buttons
@@ -63,6 +66,7 @@ const Fuel = () => {
             <option>Seixal</option>
             <option>Almada</option>
             <option>Sesimbra</option>
+            <option>Grândola</option>
           </select>
           </div>
         <div className="col-lg-10 col-8 d-flex justify-content-end">
