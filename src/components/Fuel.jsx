@@ -43,7 +43,7 @@ const Fuel = () => {
       setMunicipioNome('Seixal')
     } else if (munOptionsRef.current.value === 'Grândola') {
       setMunicipios('224')
-      setMunicipioNome('Seixal')
+      setMunicipioNome('Grândola')
     } 
   }
 
